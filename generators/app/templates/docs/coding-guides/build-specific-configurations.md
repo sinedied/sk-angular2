@@ -78,8 +78,7 @@ dev-server configuration by taking advantage of them:
 ```javascript
 {
   "scripts": {
-    "start": "dotenv -e environment.development.env.sh -- npm run env && API_PROXY_HOST='http://localhost:9000' ng serve --aot",
-    "e2e": "ngtw build && npm run env && API_PROXY_HOST='http://localhost:7357' ng e2e --webdriverUpdate=false",
+    "start": "dotenv -e environment.development.env.sh -- npm run env && API_PROXY_HOST='http://localhost:9000' ng serve --aot"
   }
 }
 ```

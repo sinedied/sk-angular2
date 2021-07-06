@@ -27,7 +27,6 @@ dist/                        mobile app production build
 dist/                        web app production build
 <% } -%>
 docs/                        project docs and coding guides
-e2e/                         end-to-end tests
 src/                         project source code
 |- app/                      app components
 |  |- core/                  core module (singleton services and single-use components)

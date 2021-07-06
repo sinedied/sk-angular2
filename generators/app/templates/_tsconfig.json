@@ -19,7 +19,7 @@
 <% if (props.target.includes('electron')) { -%>
     "target": "es5",
 <% } else { -%>
-    "target": "es2015",
+    "target": "es2017",
 <% } -%>
     "typeRoots": [
       "node_modules/@types"
@@ -43,6 +43,10 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "preserveWhitespaces": true
+    "preserveWhitespaces": true,
+<% if (props.strict) { -%>
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+<% } -%>
   }
 }
