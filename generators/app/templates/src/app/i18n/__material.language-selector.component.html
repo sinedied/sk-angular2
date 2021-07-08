@@ -3,11 +3,11 @@
 </button>
 <ng-template #text>
   <button mat-raised-button color="primary" [matMenuTriggerFor]="languageMenu">
-    {{currentLanguage}}
+    {{getLanguageName(currentLanguage)}}
   </button>
 </ng-template>
 <mat-menu #languageMenu="matMenu">
   <button mat-menu-item *ngFor="let language of languages" (click)="setLanguage(language)">
-    {{language}}
+    {{getLanguageName(language)}}
   </button>
 </mat-menu>

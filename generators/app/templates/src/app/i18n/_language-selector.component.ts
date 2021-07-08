@@ -7,6 +7,19 @@ import { AlertController } from '@ionic/angular';
 
 import { I18nService } from './i18n.service';
 
+<% if (props.ui === 'bootstrap' || props.ui === 'material') { -%>
+// Local language name
+enum ELanguages {
+  'de-DE' = 'Deutsche',
+  'en-US' = 'English',
+  'es-ES' = 'Español', // Castellano
+  'fr-FR' = 'Française',
+  'it-IT' = 'Italiano',
+  'pt-BR' = 'pt-BR', // Português do Brasil
+  'zh-CN' = 'zh-CN' // 简体中文
+}
+<% } -%>
+
 @Component({
   selector: 'app-language-selector',
   templateUrl: './language-selector.component.html',
@@ -46,6 +59,14 @@ export class LanguageSelectorComponent implements OnInit {
   get languages(): string[] {
     return this.i18nService.supportedLanguages;
   }
+
+<% if (props.ui === 'bootstrap' || props.ui === 'material') { -%>
+  public getLanguageName(languageName: string): string {
+    const langName: string = ELanguages[ languageName ];
+    return langName;
+  }
+<% } -%>
+
 <% if (props.ui === 'ionic') { -%>
 
   async changeLanguage() {
